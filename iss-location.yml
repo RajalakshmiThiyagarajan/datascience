@@ -1,0 +1,21 @@
+name: My Test Action
+
+on:
+  push: # This will trigger the action on every push to any branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: rajalakshmi.thiyagarajan@straive.com - Run a test script
+        run: |
+          echo "Running a test script..."
+          # Add your actual test commands here. For example:
+          # python my_test_script.py
+
+      - name: Report test results (example)
+        if: always() # This will always run, even if the previous step fails
+        run: echo "Test execution finished."
